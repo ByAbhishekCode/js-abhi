@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecters</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+    <ul class="language"> 
+            <li>Python</li>
+        </ul>
+</body>
+<script>
+    function addLanguage(lang)
+    {
+        const text = document.createElement("li")
+        text.innerHTML = `${lang}`
+        document.querySelector(".language").appendChild(text)
+    }
+    addLanguage("Java")
+    addLanguage("C++")
+
+
+    function newLanguage(langName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    newLanguage("golang")
+    newLanguage("javaScript")
+
+    // edit
+
+    const editText = document.querySelector("li:nth-child(3)")
+    console.log(editText)
+    editText.textContent = ""
+    const textNode = document.createTextNode("Mojo")
+    editText.appendChild(textNode)
+</script>
+</html>
