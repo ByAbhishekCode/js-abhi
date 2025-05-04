@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS Project</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Code Aur JavaScript</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const text = function(){
+        console.log('hi', Date.now());
+    }
+    let inter;
+    document.querySelector('#start').addEventListener('click',function(){
+        inter = setInterval(text,1000)
+    })
+    
+    document.querySelector("#stop").addEventListener('click', function(){
+        clearInterval(inter)
+        console.log("STOPPED")
+    },false) 
+</script>
+</html>
